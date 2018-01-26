@@ -28,7 +28,7 @@ def iterate_sites():
                     site = site + '/'
                 yield site
 
-NUM_BROWSERS = 2
+NUM_BROWSERS = 1
 manager_params, browser_params = TaskManager.load_default_params(NUM_BROWSERS)
 
 # Update browser configuration (use this for per-browser settings)
@@ -39,7 +39,7 @@ for i in xrange(NUM_BROWSERS):
     browser_params[i]['ghostery'] = opts['--ghostery'] == True
 
 # second browser has no third party cookies
-browser_params[1]['tp_cookies'] = 'never'
+# browser_params[1]['tp_cookies'] = 'never'
 
 # Update TaskManager configuration (use this for crawl-wide settings)
 manager_params['data_directory'] = '~/'
